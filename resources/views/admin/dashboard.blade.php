@@ -1,4 +1,4 @@
-@extends('./layout.master')
+@extends('layout.master')
 @section('title', 'Dashboard')
 @section('content')
 <!-- Content Wrapper. Contains page content -->

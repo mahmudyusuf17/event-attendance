@@ -15,8 +15,8 @@
         <img src="{{asset('template')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2 mt-2" alt="User Image">
     </div>
     <div class="info">
-        <a href="#" class="d-block">Mahmud Yusuf</a>
-        <sup class="text-sm text-light">admin</sup>
+        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+        <sup class="text-sm text-light">{{ Auth::user()->role }}</sup>
     </div>
     </div>
 
@@ -102,11 +102,16 @@
         </ul>
         </li>
         <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
             <i class="nav-icon fas fa-sign-out-alt"></i>
             <p>
             Logout
             </p>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+            </form>
         </a>
         </li>
     </ul>
@@ -115,3 +120,8 @@
 </div>
 <!-- /.sidebar -->
 </aside>
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

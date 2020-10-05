@@ -1,6 +1,3 @@
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -115,6 +112,64 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
     </li>
+    <li class="nav-item dropdown user user-menu mt-2">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="{{asset('template')}}/dist/img/user2-160x160.jpg" class="user-image ml-4" alt="User Image">
+            <span class="hidden-xs">{{Auth::user()->name}}</span>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+            <img src="{{asset('template')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <p>
+                {{Auth::user()->name}} - {{Auth::user()->role}}
+                <small>Member since {{Auth::user()->created_at}}</small>
+            </p>
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+            <div class="pull-left">
+                <a class="btn btn-flat btn-primary rounded btn-sm" href="{{route('profile')}}"><span class="fas fa-user"></span> {{ __('Profile' )}}</a>
+                <a class="btn btn-flat float-right btn-danger rounded btn-sm" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <span class="fas fa-sign-out-alt"></span>
+                    {{ __('Sign Out') }}
+                </a>
+            </div>
+            </li>
+        </ul>
+        </li>
+    <!-- Authentication Links
+    @guest
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+        </li>
+        @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+        @endif
+    @else
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }}
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{route('profile')}}">{{ __('Profile' )}} </a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </li>
+    @endguest -->
     </ul>
 </nav>
 <!-- /.navbar -->

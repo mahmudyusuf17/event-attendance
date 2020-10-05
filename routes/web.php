@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('user/home');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin/dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('home');
+// });
+Auth::routes();
+
+Route::get('/admin/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::get('/admin/profile', 'ProfileController@index')->name('profile');
