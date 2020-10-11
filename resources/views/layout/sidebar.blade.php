@@ -15,8 +15,7 @@
         <img src="{{asset('template')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2 mt-2" alt="User Image">
     </div>
     <div class="info">
-        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-        <sup class="text-sm text-light">{{ Auth::user()->role }}</sup>
+        <a href="#" class="d-block mt-2">{{ Auth::user()->name }}</a>
     </div>
     </div>
 
@@ -26,58 +25,31 @@
         <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
         <li class="nav-header">
-        <a href="#" class="nav-link active">
+        <a href="{{route('dashboard')}}" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
             Dashboard
             </p>
         </a>
         </li>
-        <li class="nav-header">TRANSAKSI</li>
+        <li class="nav-header">EVENT</li>
         <li class="nav-item">
-        <a href="pages/calendar.html" class="nav-link">
-            <i class="nav-icon fas fa-upload"></i>
+        <a href="{{url('admin/event')}}" class="nav-link">
+            <i class="nav-icon far fa-calendar-alt"></i>
             <p>
-            Penyewaan
-            <span class="badge badge-info right">2</span>
+            Event
             </p>
         </a>
         </li>
         <li class="nav-item">
-        <a href="pages/gallery.html" class="nav-link">
-            <i class="nav-icon fas fa-download"></i>
+        <a href="{{url('admin/attendance')}}" class="nav-link">
+            <i class="nav-icon fas fa-edit"></i>
             <p>
-            Pengembalian
+            Attendance
             </p>
         </a>
         </li>
-        <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon far fa-chart-bar"></i>
-            <p>
-            Laporan
-            </p>
-        </a>
-        </li>
-        <li class="nav-header">DATA MASTER</li>
-        <li class="nav-item">
-        <a href="https://adminlte.io/docs/3.0" class="nav-link">
-            <i class="nav-icon fas fa-user"></i>
-            <p>Pelanggan</p>
-        </a>
-        </li>
-        <li class="nav-item">
-        <a href="https://adminlte.io/docs/3.0" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>Pegawai</p>
-        </a>
-        </li>
-        <li class="nav-item">
-        <a href="https://adminlte.io/docs/3.0" class="nav-link">
-            <i class="nav-icon fas fa-bicycle"></i>
-            <p>Sepeda</p>
-        </a>
-        </li><hr>
+        <hr>
         <li class="nav-item has-treeview">
         <a href="#" class="nav-link">
             <i class="nav-icon fas fa-cog"></i>
@@ -88,13 +60,13 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="pages/tables/simple.html" class="nav-link">
+            <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Account</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="pages/tables/data.html" class="nav-link">
+            <a href="{{ route('password.request') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Forget Password</p>
             </a>

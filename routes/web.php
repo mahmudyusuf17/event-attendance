@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user/home');
-});
+// Route::get('/', function () {
+//     return view('user/home');
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('home');
@@ -23,5 +23,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/admin/dashboard', 'DashboardController@index')->name('dashboard');
+Route::resource('/admin/event', 'EventController');
+Route::get('/admin/event/edit/{id}', 'EventController@edit');
 
-Route::get('/admin/profile', 'ProfileController@index')->name('profile');
+Route::resource('/admin/attendance', 'AttendanceController');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/auth', 'AuthController@index')->name('auth');
+Route::get('/registration', 'RegisterController@index')->name('registration');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

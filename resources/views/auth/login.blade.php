@@ -1,15 +1,14 @@
 @extends('layout.login')
 @section('title', 'Login User')
 @section('content')
-<div class="login-page" style="background-image:url({{ url('template/dist/img/bicycle-banner.jpg') }}); background-repeat:no-repeat; background-position:center; background-size:cover;">
+<div class="login-page" style="background-image:url({{ url('template/dist/img/login.png') }}); background-repeat:no-repeat; background-position:center; background-size:cover;">
 <div class="container">
 <div class="row justify-content-center">
-<div class="login-box offset-md-4">
+<div class="login-box offset-md-6">
     <!-- /.login-logo -->
     <div class="card">
     <div class="card-body login-card-body">
-        <div class="justify-content-center text-center my-3 mb-2">
-        <img src="{{asset('template')}}/dist/img/logo/logo-sepeda.png" alt="">
+        <div class="justify-content-center text-center my-3 mb-4">
         </div>
 
         <form action="{{ route('login') }}" method="POST">

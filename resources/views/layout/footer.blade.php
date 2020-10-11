@@ -13,11 +13,6 @@
 <script src="{{asset('template')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
 <script src="{{asset('template')}}/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="{{asset('template')}}/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="{{asset('template')}}/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="{{asset('template')}}/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{asset('template')}}/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
@@ -35,5 +30,13 @@
 <script src="{{asset('template')}}/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('template')}}/dist/js/demo.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="{{asset('template')}}/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </body>
 </html>

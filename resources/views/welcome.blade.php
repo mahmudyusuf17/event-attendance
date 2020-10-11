@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Event Attendance</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{asset('template')}}/dist/css/adminlte.min.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -64,37 +64,24 @@
         </style>
     </head>
     <body>
+        <div class="login-page" style="background-image:url({{ url('template/dist/img/welcome.png') }}); background-repeat:no-repeat; background-position:center; background-size:cover;">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="content">
+                    <div class="title m-b-md">
+                        <p class="h3">Welcome to</p> 
+                        <p class="h1">Event Attendance</p>
+                    </div>
+                    @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <p class="text-success">You are has Login</p>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                        <a href="{{route('login')}}" class="btn btn-primary">Login as Organizer</a>
+                        <a href="{{route('auth')}}" class="btn btn-primary">Login as User</a>
+                        @endauth
+                    @endif
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+            <div>
         </div>
     </body>
+    <script src="{{asset('template')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 </html>

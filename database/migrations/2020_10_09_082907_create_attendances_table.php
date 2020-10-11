@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePegawaiTable extends Migration
+class CreateAttendancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreatePegawaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('pegawai', function (Blueprint $table) {
+        Schema::create('attendances', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->string('jenis_kelamin');
-            $table->dateTime('tgl_lahir');
-            $table->string('alamat');
-            $table->string('email');
-            $table->string('no_hp');
-            $table->string('jabatan');
-            $table->string('gambar');
+            $table->string('event');
+            $table->enum('status', ['hadir', 'tidak hadir']);
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -34,6 +31,6 @@ class CreatePegawaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pegawai');
+        Schema::dropIfExists('attendances');
     }
 }
